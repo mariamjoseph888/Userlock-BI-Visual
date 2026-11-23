@@ -1,0 +1,26 @@
+{
+  "visual": {
+    "name": "userlock",
+    "displayName": "User Lock",
+    "guid": "userlock5C2E91A07B3F4D1E8A6C0F4B7D92E315",
+    "visualClassName": "Visual",
+    "version": "1.0.1.0",
+    "description": "Email + password gate for Power BI. On success it filters the bound email column to the signed-in person so the page shows only their data. Convenience lock, not security.",
+    "supportUrl": "https://github.com/mariamjoseph888/Userlock-BI-Visual",
+    "gitHubUrl": "https://github.com/mariamjoseph888/Userlock-BI-Visual"
+  },
+  "apiVersion": "5.11.1",
+  "author": {
+    "name": "Mariam",
+    "email": "mariaxjoseph111@gmail.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": null,
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": [],
+  "version": "1.0.1.0"
+}

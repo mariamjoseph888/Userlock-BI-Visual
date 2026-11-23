@@ -1,0 +1,42 @@
+{
+  "dataRoles": [
+    { "displayName": "Email", "name": "email", "kind": "Grouping" },
+    { "displayName": "Password hash", "name": "hash", "kind": "Grouping" },
+    { "displayName": "Full name (optional)", "name": "name", "kind": "Grouping" }
+  ],
+  "objects": {
+    "gate": {
+      "properties": {
+        "title": { "type": { "text": true } },
+        "salt": { "type": { "text": true } },
+        "accent": { "type": { "fill": { "solid": { "color": true } } } },
+        "showSetup": { "type": { "bool": true } },
+        "minLength": { "type": { "numeric": true } }
+      }
+    },
+    "general": {
+      "properties": {
+        "filter": { "type": { "filter": true } }
+      }
+    }
+  },
+  "dataViewMappings": [
+    {
+      "conditions": [
+        { "email": { "max": 1 }, "hash": { "max": 1 }, "name": { "max": 1 } }
+      ],
+      "table": {
+        "rows": {
+          "select": [
+            { "for": { "in": "email" } },
+            { "for": { "in": "hash" } },
+            { "for": { "in": "name" } }
+          ],
+          "dataReductionAlgorithm": { "top": { "count": 5000 } }
+        }
+      }
+    }
+  ],
+  "privileges": [],
+  "supportsSynchronizingFilterState": true
+}
